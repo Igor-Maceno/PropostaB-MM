@@ -4,25 +4,78 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css"> 
+    <link rel="stylesheet" href="css/menu.css">
+    <link rel="stylesheet" href="css/main.css"> 
+    <link rel="stylesheet" href="css/modal.css"> 
+    <link rel="stylesheet" href="css/button.css"> 
     <title>Contatos</title>
 </head>
 <body>
-    <h1 id="logado"></h1>
-    <div class="container">
-        <div class="card">
-            <div class="grid">
-                <h2>Igor Lopes Maceno</h2>
-                <div class="contatoEmail">
-                    <p>igorlopesmaceno17@gmail.com</p>
-                </div>
-                <div class="contatoTelefone">
-                    <p>(42) 98408-2845</p>
-                </div>
+<div id="container">
+    <header class="header">
+        <div class="user">
+            <img src="img/user.png" alt="user">
+            <h1 id="logado"></h1>
+        </div>
+        <div class="sair" onclick="sair()">
+            <strong>Sair</strong>
+            <img src="img/logout.png" alt="logout">
+        </div>
+    </header>  
+    <main>
+        <button type="button" class="button blue mobile" id="cadastrarCliente">Cadastrar</button>
+        <table class="records">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>E-mail</th>
+                    <th>Telefone</th>
+                    <th>Alterar</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Maria</td>
+                    <td>maria@gmail.com</td>
+                    <td>(11) 97165-1111</td>
+                    <td>
+                        <button type="button" class="button green"><img src="img/edit.png" width="25px" alt=""></button>
+                        <button type="button" class="button red"><img src="img/trash.png" width="20px" alt=""></button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>João Pedro</td>
+                    <td>joao@gmail.com</td>
+                    <td>(11) 97165-2222</td>
+                    <td>
+                        <button type="button" class="button green"><img src="img/edit.png" width="25px" alt=""></button>
+                        <button type="button" class="button red"><img src="img/trash.png" width="20px" alt=""></button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="modal" id="modal">
+            <div class="modal-content">
+                <header class="modal-header">
+                    <h2>Novo Cliente</h2>
+                    <span class="modal-close" id="modalClose">&#10006;</span>
+                </header>
+                <form class="modal-form">
+                    <input type="text" class="modal-field" placeholder="Nome do Cliente">
+                    <input type="email" class="modal-field" placeholder="e-mail do Cliente">
+                    <input type="text" class="modal-field" placeholder="Celular do Cliente">
+                </form>
+                <footer class="modal-footer">
+                    <button class="button green">Salvar</button>
+                    <button class="button blue">Cancelar</button>
+                </footer>
             </div>
         </div>
-    </div>
-    <button onclick="sair()">sair</button>
+    </main> 
+    
+    
+    
     <script src="Javascript/script.js"></script>
+</div>
 </body>
 </html>
